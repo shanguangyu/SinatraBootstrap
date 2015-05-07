@@ -1,0 +1,172 @@
+
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<h2>
+				<em><strong>Details</strong></em>
+			</h2>
+			<dl>
+				<dt>
+					snpID
+				</dt>
+				<dd>
+					<%= @split_str[0] %>
+				</dd>
+				<dt>
+					Position
+				</dt>
+				<dd>
+					<%= @split_str[1] %> : <%= @split_str[2] %>
+				</dd>
+			</dl>
+			<div class="tabbable" id="tabs-675034">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a data-toggle="tab" href="#panel-54991">DNA Element</a>
+					</li>
+					<li>
+						<a data-toggle="tab" href="#panel-790573">eQTL</a>
+					</li>
+					<li>
+						<a data-toggle="tab" href="#panel-790574">motif</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-54991">
+						<p>
+				<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>
+							Items
+						</th>
+						<th>
+							Results
+						</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							promoter
+						</td>
+						<td>
+							<%= @split_str[3] %>
+						</td>
+			
+					</tr>
+					<tr class="success">
+						<td>
+							enhancer
+						</td>
+						<td>
+							<%= @split_str[4] %>
+						</td>
+	
+					</tr>
+					<tr class="error">
+						<td>
+							score
+						</td>
+						<td>
+							<%= @split_str[5] %>
+						</td>
+		
+					</tr>
+				</tbody>
+				</table>
+					</p>
+					</div>
+					<div class="tab-pane" id="panel-790573">
+						<p>
+									<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>
+							Items
+						</th>
+						<th>
+							Results
+						</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							eqtlgene
+						</td>
+						<td>
+							<%= @split_str[6] %>
+						</td>
+			
+					</tr>
+					<tr class="success">
+						<td>
+							eqtltype
+						</td>
+						<td>
+							<%= @split_str[7] %>
+						</td>
+	
+					</tr>
+					<tr class="error">
+						<td>
+							eqtlscore
+						</td>
+						<td>
+							<%= @split_str[8] %>
+						</td>
+		
+					</tr>
+				</tbody>
+			</table>
+						</p>
+					</div>
+					<div class="tab-pane" id="panel-790574">
+						<p>
+					<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>
+							pwm
+						</th>
+						<th>
+							strand
+						</th>
+						<th>
+							score
+						</th>
+
+					</tr>
+				</thead>
+				<tbody>
+				<% @motif_lists.each do |pwm| %>
+					<tr>
+						<td>
+						<%= pwm[0] %>
+						</td>
+						<td>
+						<%= pwm[1] %>
+						</td>
+						<% end %>
+						<td>
+						<%= @split_str[-2] %>
+						</td>
+			
+					</tr>
+					
+
+
+				</tbody>
+			</table>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

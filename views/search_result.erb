@@ -1,0 +1,114 @@
+
+
+<link rel="stylesheet" href="/vendor/bootstrap/css/theme.default.css">
+<script type="text/javascript" src="/vendor/bootastrap/js/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="/vendor/bootstrap/js/jquery.tablesorter.widgets.js"></script>
+
+<script type="text/javascript" src="/vendor/bootstrap/js/sorttable.js"></script>
+
+<!-- <table class="sortable">
+<thead>
+  <tr><th>Person</th><th>Monthly pay</th></tr>
+</thead>
+<tbody>
+  <tr><td>Jan Molby</td><td>£12,000</td></tr>
+  <tr><td>Steve Nicol</td><td>£8,500</td></tr>
+  <tr><td>Steve McMahon</td><td>£9,200</td></tr>
+  <tr><td>John Barnes</td><td>£15,300</td></tr>
+</tbody>
+<tfoot>
+  <tr><td>TOTAL</td><td>£45,000</td></tr>
+</tfoot>
+
+</table> -->
+<table align="left" class = "table table-striped table-hover sortable" border="1" cellpadding="0" cellspacing="10" style="width:100%;" width="100%" >
+<thead>
+        <tr>
+            <th rowspan="2" style="width:82px;height:32px;">
+            <p align="center">snpID</p>
+            </th>
+            <th rowspan="2" style="width:94px;height:32px;">
+            <p align="center">Position</p>
+            </th>
+            <th colspan="3" style="width:275px;height:32px;">
+            <p align="center">DNA Element</p>
+            </th>
+            <th colspan="2" style="width:159px;height:32px;">
+            <p align="center">eQTL</p>
+            </th>
+            <th colspan="2" style="width:159px;height:32px;">
+            <p align="center">motif</p>
+            </th>
+            <th rowspan="2" style="width:159px;height:32px;" class="sorttable">
+            <p align="center">totalscore</p>
+            </th>
+        </tr>
+        <tr>
+            <th style="width:109px;height:32px;">
+            <p align="center">promoter</p>
+            </th>
+            <th style="width:85px;height:32px;">
+            <p align="center">enhancer</p>
+            </th>
+            <th style="width:82px;height:32px;">
+            <p align="center">score</p>
+            </th>
+            <th style="width:79px;height:32px;">
+            <p align="center">gene</p>
+            </th>
+            <th style="width:79px;height:32px;">
+            <p align="center">score</p>
+            </th>
+            <th style="width:79px;height:32px;">
+            <p align="center">pwm</p>
+            </th>
+            <th style="width:79px;height:32px;">
+            <p align="center">score</p>
+            </th>
+
+
+        </tr>
+    <tbody>
+        <% @results.each do |result| %>
+            <tr>
+                <td style="width:82px;height:32px;">
+                <form action="/details/<%= result[:snpID] %>" method="get">
+                    <input type="hidden" name="result" value="<%= result.collect {|key, value| value.to_s}.join(':') %>" >
+
+                    <button><%= result[:snpID] %></button> 
+                </form>
+                </td>
+                <td style="width:94px;height:32px;">
+                <p align="center"><%= result[:chr] %>: <%= result[:start] %></p>
+                </td>
+                <td style="width:109px;height:32px;">
+                <p align="center"><%= result[:promoter] %></p>
+                </td>
+                <td style="width:85px;height:32px;">
+                <p align="center"><%= result[:enhancer] %></p>
+                </td>
+                <td style="width:82px;height:32px;">
+                <p align="center"><%= result[:elescore] %></p>
+                </td>
+                <td style="width:79px;height:32px;">
+                <p align="center"><%= result[:eqtlgene] %></p>
+                </td>
+                <td style="width:79px;height:32px;">
+                <p align="center"><%= result[:eqtlscore] %></p>
+                </td>
+                <td style="width:79px;height:32px;">
+                <p align="center"><%= result[:motifpwm] %></p>
+                </td>
+                <td style="width:79px;height:32px;">
+                <p align="center"><%= result[:motifscorez] %></p>
+                </td>
+                <td style="width:79px;height:32px;">
+                <p align="center"><%= result[:totalscore] %></p>
+                </td>
+
+            </tr>
+        <% end %>
+    </tbody>
+    </thead>
+</table>
+

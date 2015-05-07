@@ -1,0 +1,91 @@
+<div class="jumbotron">
+<div class="container">
+  <h1>Welcome!</h1>
+  <p>
+   <dl>
+  	<dt>Description</dt>
+  	<dd>This is a software</dd>
+  	<dt>methods</dt>
+  	<dd>Enter dbSNP IDs, 0-based coordinates, BED files, VCF files, GFF3 files (hg19).</dd>
+  </dl>
+
+ 
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+      	This is a very good software.
+      	blablabla...
+        <p>You can input snp_id just like
+        rs113219913
+	    </p>
+    	
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal --> 
+  </p>
+</div>
+</div>
+ 
+<form action='/search' method='post' class="form-group" >
+	<div class="form-group-lg" rows = '6'>
+	<textarea class="form-control" rows = 6 placeholder = 'Please input snp id here...' name = 'snp_id' autofocus>
+
+	</textarea>
+
+	</div>
+</br>
+  <button type = 'submit' class="btn btn-success">Submit</button>
+</form>
+
+<style type="text/css">
+.aa{
+text-align:right;}
+
+</style>
+
+
+<!-- <table>
+<tr>
+<td class ="aa">Upload file</td>
+<td>
+<form name="uploadform" method="post" ENCTYPE="multipart/form-data"><!--multipart/form-data????????? -->
+<!-- <input name="file1" size="50" type="file" />
+<input name="upload" type="submit" style="height:20px;width:80px;" value="??????" onclick="checkFile()">
+</form>
+</td>
+</tr> -->
+<!-- <tr> --> 
+<!-- <td class="aa">?????????</td>
+<td><iframe id="iProgress" marginwidth="0" marginheight="0" frameborder="0" src="" width="320" height="30" scrolling="no"></iframe></td> --></tr>
+</table>
+
+
+
+
+ <footer>
+  	<hr style="BORDER-BOTTOM-STYLE: dotted; BORDER-LEFT-STYLE: dotted; BORDER-RIGHT-STYLE: dotted; BORDER-TOP-STYLE: dotted" color=#000000 size=1>
+  
+  	<p>&copy; 2015 <a href="mailto:work@shanguangyu.com"> Guangyu Shan </a>  &amp; <a href="mailto:luyiming_1986@126.com"> Yiming Lu </a>  &amp; <a href ="mailto:zhangcg@bmi.ac.cn"> Chenggang Zhang </a>. All rights reserved.
+    <img src="/images/about_us-icon.png" width="30" height="30" align="right">
+
+    </p>
+  </div>
+  </footer>
+
+
+
+
